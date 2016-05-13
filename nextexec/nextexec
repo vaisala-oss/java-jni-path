@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -ex
+#set -ex
 
 # Returns the location of the next executable in the path with a matching
 # *basename*. This can be used to transparently proxy and modify shell
@@ -19,7 +19,7 @@ for path in $(which -a "$scriptname"); do
         break
     fi
 done
-if [ -z $result ] # self not in PATH
+if [ $found -eq 0 ] && [ -z $result ] # script is the last or not in PATH
 then
    result=$(which "$scriptname")
 fi
