@@ -1,0 +1,26 @@
+#!/bin/sh
+
+set -ex
+
+# Returns the location of the next executable in the path with a matching
+# *basename*. This can be used to transparently proxy and modify shell
+# executables
+#
+# Arguments:
+# $1: Full path to the wrapping script
+scriptname=$(basename $1)
+result=""
+found=0
+for path in $(which -a "$scriptname"); do
+    if [ "$path" = "$1" ]; then
+        found=1
+    elif [ "$found" -eq "1" ]; then
+        result="$path"
+        break
+    fi
+done
+if [ -z $result ] # self not in PATH
+then
+   result=$(which "$scriptname")
+fi
+printf %s "$result"
