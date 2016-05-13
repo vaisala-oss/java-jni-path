@@ -11,7 +11,7 @@ Standards-Version: 3.9.5
 
 Package: java-jni-wrapper
 Architecture: all
-Depends: openjdk-7-jre-headless | java-runtime-headless (>= 1.6), ${misc:Depends}
+Depends: openjdk-7-jre-headless | java-runtime-headless (>= 1.6), nextexec, ${misc:Depends}
 Description: Makes JNI libraries in /usr/lib/jni/ available by default.
  Installs a `java` wrapper in /usr/local/bin that sets LD_LIBRARY_PATH before
  execution. This makes shared libraries in /usr/lib/jni/ available by default.
