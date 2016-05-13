@@ -1,4 +1,4 @@
-Source: java-jnilibs
+Source: java-jni-wrapper
 Section: java
 Priority: optional
 Maintainer: Eero Aaltonen <eero.aaltonen@vaisala.com>
@@ -6,10 +6,10 @@ Maintainer: Eero Aaltonen <eero.aaltonen@vaisala.com>
 Build-Depends: debhelper (>= 8.0.0)
 Standards-Version: 3.9.5
 #Homepage: <insert the upstream URL, if relevant>
-#Vcs-Git: git://git.debian.org/collab-maint/java-jnilibs.git
-#Vcs-Browser: http://git.debian.org/?p=collab-maint/java-jnilibs.git;a=summary
+#Vcs-Git: git://git.debian.org/collab-maint/java-jni-wrapper.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/java-jni-wrapper.git;a=summary
 
-Package: java-jnilibs
+Package: java-jni-wrapper
 Architecture: all
 Depends: openjdk-7-jre-headless | java-runtime-headless (>= 1.6), ${misc:Depends}
 Description: Makes JNI libraries in /usr/lib/jni/ available by default.
