@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-
+#
 # This script wraps and modifies the behaviour of *java*
 # it sets the LD_LIBRARY_PATH before execution
 
