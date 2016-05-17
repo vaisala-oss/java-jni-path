@@ -6,6 +6,10 @@
 #
 # Arguments:
 # $1: Full path to the wrapping script
+#
+# Output (std.out):
+# Full path to the next executable with a matching *basename*.
+# If $1 is not in $PATH, prints the first match (i.e. `which $(basename $1)`).
 scriptname=$(basename $1)
 result=""
 found=0
