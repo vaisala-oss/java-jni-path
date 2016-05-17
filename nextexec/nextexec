@@ -17,7 +17,7 @@ for path in $(which -a "$scriptname"); do
         break
     fi
 done
-if [ $found -eq 0 ] && [ -z $result ] # script is the last or not in PATH
+if [ $found -eq 0 ] # script is not in PATH
 then
    result=$(which "$scriptname")
 fi
