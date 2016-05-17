@@ -1,14 +1,11 @@
 #!/usr/bin/env sh
 
-#set -ex
-
 # This script wraps and modifies the behaviour of *java*
 # it sets the LD_LIBRARY_PATH before execution
 
 fullpathself=$(readlink -f $0)
 
 JAVA=$(nextexec "$fullpathself")
-#printf %s\\n "$JAVA"
 
 export LD_LIBRARY_PATH="/usr/lib/jni"
 

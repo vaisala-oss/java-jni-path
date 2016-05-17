@@ -1,7 +1,5 @@
 #!/bin/sh
 
-#set -ex
-
 # Returns the location of the next executable in the path with a matching
 # *basename*. This can be used to transparently proxy and modify shell
 # executables
