@@ -1,5 +1,5 @@
 java-jni-wrapper (0.1-1) unstable; urgency=low
 
-  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+  * Initial release
 
  -- Eero Aaltonen <eero.aaltonen@vaisala.com>  Thu, 12 May 2016 15:39:38 +0300
