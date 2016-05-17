@@ -3,8 +3,10 @@
 # This script wraps and modifies the behaviour of *java*
 # it sets the LD_LIBRARY_PATH before execution
 
+# Get path to my install location
 fullpathself=$(readlink -f $0)
 
+# Find actual `java` executable from $PATH
 JAVA=$(nextexec "$fullpathself")
 
 export LD_LIBRARY_PATH="/usr/lib/jni"
