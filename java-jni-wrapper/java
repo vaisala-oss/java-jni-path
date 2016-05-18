@@ -1,7 +1,14 @@
 #!/usr/bin/env sh
 #
-# This script wraps and modifies the behaviour of *java*
-# it sets the LD_LIBRARY_PATH before execution
+# Calling this script is equal to calling
+#	LD_LIBRARY_PATH="/usr/lib/jni" java
+#
+# This script adds the LD_LIBRARY_PATH option transparently, so that
+# it is available from all call sites that call `java` from the PATH.
+# The effect is that "/usr/lib/jni" is prepended to the dynamic library
+# search path. Note that it can still be overridden with the
+#	-Djava.library.path
+# option.
 
 # Get path to my install location
 fullpathself=$(readlink -f $0)
