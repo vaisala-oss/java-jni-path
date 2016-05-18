@@ -11,7 +11,7 @@
 # option.
 
 # Get path to my install location
-fullpathself=$(readlink -f $0)
+fullpathself=$(readlink -f "$0")
 
 # Find actual `java` executable from $PATH
 JAVA=$(nextexec "$fullpathself")
@@ -21,4 +21,4 @@ if [ -z "$JAVA" ] ; then
 	exit 1
 fi
 
-exec env LD_LIBRARY_PATH="/usr/lib/jni" $JAVA "$@"
+exec env LD_LIBRARY_PATH="/usr/lib/jni" "$JAVA" "$@"

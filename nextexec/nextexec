@@ -10,13 +10,13 @@
 # Output (std.out):
 # Full path to the next executable with a matching *basename*.
 # If $1 is not in $PATH, prints the first match (i.e. `which $(basename $1)`).
-scriptname=$(basename $1)
+scriptname=$(basename "$1")
 result=""
 found=0
 for path in $(which -a "$scriptname"); do
     if [ "$path" = "$1" ]; then
         found=1
-    elif [ "$found" -eq "1" ]; then
+    elif [ $found -eq "1" ]; then
         result="$path"
         break
     fi
