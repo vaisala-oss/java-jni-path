@@ -13,16 +13,16 @@
 scriptname=$(basename "$1")
 result=""
 found=0
-for path in $(which -a "$scriptname"); do
-    if [ "$path" = "$1" ]; then
+for path in $(which -a "${scriptname}"); do
+    if [ "${path}" = "$1" ]; then
         found=1
     elif [ $found -eq "1" ]; then
-        result="$path"
+        result="${path}"
         break
     fi
 done
 if [ $found -eq 0 ] # script is not in PATH
 then
-   result=$(which "$scriptname")
+   result=$(which "${scriptname}")
 fi
-printf %s "$result"
+printf %s "${result}"
