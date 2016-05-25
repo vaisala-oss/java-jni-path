@@ -13,8 +13,11 @@
 # Get path to my install location
 fullpathself=$(readlink -f "$0")
 
-# Find actual `mvn` executable from $PATH
+# Get path to underlying 'mvn' executable from $PATH
 MVN=$(nextexec "${fullpathself}")
+
+# Resolve links so that it will work with user installed zip version
+MVN=$(readlink -f "$MVN")
 
 if [ -z "${MVN}" ] ; then
 	>&2 echo "$(readlink -f "$0") Error: No underlying mvn found from PATH."
