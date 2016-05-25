@@ -1,0 +1,15 @@
+Source: java-jni-wrapper
+Section: java
+Priority: optional
+Maintainer: Eero Aaltonen <eero.aaltonen@vaisala.com>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.5
+#Vcs-Git: git://git.debian.org/collab-maint/java-jni-wrapper.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/java-jni-wrapper.git;a=summary
+
+Package: java-jni-wrapper
+Architecture: all
+Depends: openjdk-7-jre-headless | java-runtime-headless (>= 1.6), nextexec, ${misc:Depends}
+Description: Makes JNI libraries in /usr/lib/jni/ available by default.
+ Installs a `java` wrapper in /usr/local/bin that sets LD_LIBRARY_PATH before
+ execution. This makes shared libraries in /usr/lib/jni/ available by default.

@@ -1,0 +1,24 @@
+#!/usr/bin/env sh
+#
+# Calling this script is equal to calling
+#	LD_LIBRARY_PATH="/usr/lib/jni" java
+#
+# This script adds the LD_LIBRARY_PATH option transparently, so that
+# it is available from all call sites that call `java` from the PATH.
+# The effect is that "/usr/lib/jni" is prepended to the dynamic library
+# search path. Note that it can still be overridden with the
+#	-Djava.library.path
+# option.
+
+# Get path to my install location
+fullpathself=$(readlink -f "$0")
+
+# Find actual `java` executable from $PATH
+JAVA=$(nextexec "${fullpathself}")
+
+if [ -z "${JAVA}" ] ; then
+	>&2 echo "$(readlink -f "$0") Error: No underlying java found from PATH."
+	exit 1
+fi
+
+exec env LD_LIBRARY_PATH="/usr/lib/jni" "${JAVA}" "$@"
