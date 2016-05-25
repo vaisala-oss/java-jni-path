@@ -1,5 +1,5 @@
-java-jni-wrapper (0.1-1) unstable; urgency=low
+mvn-jni-wrapper (0.1-1) unstable; urgency=low
 
   * Initial release
 
- -- Eero Aaltonen <eero.aaltonen@vaisala.com>  Thu, 12 May 2016 15:39:38 +0300
+ -- Eero Aaltonen <eero.aaltonen@vaisala.com>  Wed, 25 May 2016 15:09:26 +0300

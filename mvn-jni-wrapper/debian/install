@@ -1,1 +1,1 @@
-java usr/local/bin
+mvn usr/local/bin
