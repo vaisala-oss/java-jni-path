@@ -14,15 +14,15 @@
 fullpathself=$(readlink -f "$0")
 
 # Get path to underlying 'mvn' executable from $PATH
-MVN=$(nextexec "${fullpathself}")
+mvn=$(nextexec "${fullpathself}")
 
 # Resolve links so that it will work with user installed zip version
-MVN=$(readlink -f "$MVN")
+mvn=$(readlink -f "$mvn")
 
-if [ -z "${MVN}" ] ; then
+if [ -z "${mvn}" ] ; then
 	>&2 echo "$(readlink -f "$0") Error: No underlying mvn found from PATH."
 	exit 1
 fi
 
 export LD_LIBRARY_PATH="/usr/lib/jni"
-exec "${MVN}" "$@"
+exec "${mvn}" "$@"
