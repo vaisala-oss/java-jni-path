@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 #
 # Calling this script is equal to calling
-#	export LD_LIBRARY_PATH="/usr/lib/jni" mvn
+#	export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:/usr/lib/jni" mvn
 #
 # This script adds the LD_LIBRARY_PATH option transparently, so that
 # it is available from all call sites that call `mvn` from the PATH.
@@ -24,5 +24,12 @@ if [ -z "${mvn}" ] ; then
 	exit 1
 fi
 
-export LD_LIBRARY_PATH="/usr/lib/jni"
+libpath=""
+if [ -z "${LD_LIBRARY_PATH}" ] ; then
+	libpath="/usr/lib/jni"
+else
+	libpath="${LD_LIBRARY_PATH}:/usr/lib/jni"
+fi
+
+export LD_LIBRARY_PATH="${libpath}"
 exec "${mvn}" "$@"

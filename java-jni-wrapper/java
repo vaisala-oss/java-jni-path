@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 #
 # Calling this script is equal to calling
-#	LD_LIBRARY_PATH="/usr/lib/jni" java
+#	LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:/usr/lib/jni" java
 #
 # This script adds the LD_LIBRARY_PATH option transparently, so that
 # it is available from all call sites that call `java` from the PATH.
@@ -21,4 +21,11 @@ if [ -z "${java}" ] ; then
 	exit 1
 fi
 
-exec env LD_LIBRARY_PATH="/usr/lib/jni" "${java}" "$@"
+libpath=""
+if [ -z "${LD_LIBRARY_PATH}" ] ; then
+	libpath="/usr/lib/jni"
+else
+	libpath="${LD_LIBRARY_PATH}:/usr/lib/jni"
+fi
+
+exec env LD_LIBRARY_PATH="${libpath}" "${java}" "$@"
