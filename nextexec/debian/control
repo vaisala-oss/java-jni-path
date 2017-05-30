@@ -4,8 +4,8 @@ Priority: optional
 Maintainer: Eero Aaltonen <eero.aaltonen@vaisala.com>
 Build-Depends: debhelper (>= 8.0.0)
 Standards-Version: 3.9.5
-#Vcs-Git: git://git.debian.org/collab-maint/nextexec.git
-#Vcs-Browser: http://git.debian.org/?p=collab-maint/nextexec.git;a=summary
+Vcs-Git: git@github.com:vaisala-oss/java-jni-path.git
+Vcs-Browser: https://github.com/vaisala-oss/java-jni-path/tree/master/nextexec
 
 Package: nextexec
 Architecture: all
